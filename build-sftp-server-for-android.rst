@@ -25,7 +25,8 @@ Fetch and uncompress `OpenSSH` (I used 6.2p2):
 
 Apply the following (very dirty) patch:
 
-.. code-block:: shell
+::
+
 	--- openssh-6.2p2/sftp-server-main.c	2009-02-21 22:47:02.000000000 +0100
 	+++ openssh-6.2p2-android/sftp-server-main.c	2013-07-11 22:37:54.000000000 +0200
 	@@ -40,12 +40,12 @@

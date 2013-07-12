@@ -91,8 +91,7 @@ Build sftp-server
 	$ cd openssh-6.2p2
 	$ patch < sftp-server-android.patch
 
-* Fire up the ``configure`` script, note that we disable everything we can and ask
-for a statically linked binary thanks to ``--with-ldflags=-static``.
+* Fire up the ``configure`` script, note that we disable everything we can and ask for a statically linked binary thanks to ``--with-ldflags=-static``.
 
 ::
 

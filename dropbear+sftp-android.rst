@@ -12,6 +12,7 @@ This document aims at explaining how to build your own ``dropbear`` and ``sftp-s
 
 .. image:: https://raw.github.com/iMilnb/docs/master/images/dropdroidshot.png
 	:alt: SSH access to a SG4
+	:align: center
 
 Cross-compiling pre-requisites
 ------------------------------

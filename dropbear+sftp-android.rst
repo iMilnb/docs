@@ -10,7 +10,7 @@ There are some ``SSH`` servers available on the Android market, or better said "
 
 This document aims at explaining how to build your own ``dropbear`` and ``sftp-servers`` binaries, and how to use them.
 
-.. image:: raw/master/images/dropdroidshot.png
+.. image:: https://raw.github.com/iMilnb/docs/master/images/dropdroidshot.png
 	:alt: SSH access to a SG4
 
 Cross-compiling pre-requisites

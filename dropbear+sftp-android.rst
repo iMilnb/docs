@@ -48,7 +48,7 @@ Build dropbear
 
 	$ wget -O- -q https://matt.ucc.asn.au/dropbear/dropbear-2013.58.tar.bz2|tar jxvf -
 
-* Apply the following `dropbear patch`_
+* Apply the following `dropbear patch`_ (based on dropbear/Android patch by Jakob Blomer)
 
 ::
 

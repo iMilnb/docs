@@ -10,7 +10,7 @@ There are some ``SSH`` servers available on the Android market, or better said "
 
 This document aims at explaining how to build your own ``dropbear`` and ``sftp-servers`` binaries, and how to use them.
 
-.. image:: https://raw.github.com/iMilnb/docs/master/images/dropdroidshot.png
+.. image:: https://raw.github.com/iMilnb/docs/master/images/dropsftp.png
 	:alt: SSH access to a SG4
 	:align: center
 
@@ -186,12 +186,15 @@ Run ``dropbear`` as a daemon
 Useful URLs
 -----------
 
+* http://wiki.debian.org/EmdebianToolchain
 * http://wiki.cyanogenmod.org/w/Doc:_dropbear
 * http://blog.mwmdev.com/tutorials/249/
 * https://matt.ucc.asn.au/dropbear/
 * https://github.com/rngadam/XinCheJian-GGHC/wiki/Installing-and-using-ssh-server-on-android
 * https://code.google.com/p/droidsshd/wiki/BuildingDropbear
 * http://adrianpopagh.blogspot.fr/2013/01/android-adding-scpsftp-support-to.html
+* http://www.brandonhutchinson.com/Installing_OpenSSH.html
+* https://code.google.com/p/droidsshd/issues/detail?id=1
 
 .. _SSHFS: http://fuse.sourceforge.net/sshfs.html
 .. _dropbear patch: patches/dropbear-2013-58-android.patch

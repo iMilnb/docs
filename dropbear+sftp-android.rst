@@ -10,8 +10,8 @@ There are some ``SSH`` servers available on the Android market, or better said "
 
 This document aims at explaining how to build your own ``dropbear`` and ``sftp-servers`` binaries, and how to use them.
 
-Pre-requisites
---------------
+Cross-compiling pre-requisites
+------------------------------
 
 * Assuming you're using Debian (wheezy) GNU/Linux, install the following package
 

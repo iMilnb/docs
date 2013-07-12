@@ -67,7 +67,7 @@ Build dropbear
 
 ::
 
-	STATIC=1 MULTI=1 CC=arm-linux-gnueabi-gcc SCPPROGRESS=0 PROGRAMS="dropbear dropbearkey scp dbclient" make strip
+	$ STATIC=1 MULTI=1 CC=arm-linux-gnueabi-gcc SCPPROGRESS=0 PROGRAMS="dropbear dropbearkey scp dbclient" make strip
 
 * Push the ``dropbearmulti`` binary to a writable directory of your ``android`` device
 
@@ -95,19 +95,19 @@ Build sftp-server
 
 ::
 
-	./configure --host=arm-linux-gnueabi  --without-shadow --disable-largefile --disable-etc-default-login --disable-lastlog --disable-utmp --disable-utmpx --disable-wtmp --disable-wtmpx --disable-libutil --disable-pututline --disable-pututxline CC=/usr/bin/arm-linux-gnueabi-gcc --with-ldflags=-static
+	$ ./configure --host=arm-linux-gnueabi  --without-shadow --disable-largefile --disable-etc-default-login --disable-lastlog --disable-utmp --disable-utmpx --disable-wtmp --disable-wtmpx --disable-libutil --disable-pututline --disable-pututxline CC=/usr/bin/arm-linux-gnueabi-gcc --with-ldflags=-static
 
 * Build ``sftp-server`` the classic way:
 
 ::
 
-	make sftp-server
+	$ make sftp-server
 
 And finally send it to your Android device via ``adb``:
 
 ::
 
-	adb push sftp-server /sdcard/tmp
+	$ adb push sftp-server /sdcard/tmp
 
 Prepare your device for dropbear
 --------------------------------
@@ -175,7 +175,7 @@ Run ``dropbear`` as a daemon
 
 ::
 
-	# bin/dropbear -A -N shell -U 1000 -G 1000 -R /data/dropbear/authorized_keys
+	# bin/dropbear -A -N shell -U 1000 -G 1000 -R /data/dropbear/etc/authorized_keys
 
 * From now on, you will be able to access your device through ``SSH``, but also through ``SFTP``, thus making is "mountable" using `SSHFS`_.
 

@@ -23,10 +23,14 @@ Pre-requisites
 
 * Install the cross compiling tools for `arm`
 
+::
+
 	# apt-get install g++-4.4-arm-linux-gnueabi
 	# apt-get install xapt
 
 * And then needed libs for `OpenSSH` to build `sftp-server`
+
+::
 
 	# xapt -a armel -m zlib1g-dev
 	# xapt -a armel -m libssl-dev
@@ -39,6 +43,8 @@ Build dropbear
 	$ wget -O- -q https://matt.ucc.asn.au/dropbear/dropbear-2013.58.tar.bz2|tar jxvf -
 
 * Apply the [following](patches/dropbear-2013-58-android.patch) patch
+
+::
 
 	$ cd dropbear-2013.58
 	$ patch < dropbear-2013-58-android.patch
@@ -66,6 +72,8 @@ Build sftp-server
 
 * Apply the [following (very dirty) patch](patches/openssh-6.2p2-android.patch)
 
+::
+
 	$ cd openssh-6.2p2
 	$ patch < sftp-server-android.patch
 
@@ -87,6 +95,8 @@ Prepare your device for dropbear
 
 * Create needed directories
 
+::
+
 	$ adb shell
 	$ su
 	# mkdir -p /data/dropbear/{bin,etc,var}
@@ -98,6 +108,8 @@ Prepare your device for dropbear
 
 * `dropbearmulti` is a multi-call binary, it is required to create the actual programs symlinks
 
+::
+
 	# cd bin
 	# ln -s dropbearmulti dropbear
 	# ln -s dropbearmulti dropbearkey
@@ -106,12 +118,16 @@ Prepare your device for dropbear
 
 * Create needed private and public keys for this device
 
+::
+
 	# bin/dropbearkey -t rsa -f etc/dropbear_rsa_host_key
 	# bin/dropbearkey -t dss -f etc/dropbear_dss_host_key
 	# bin/dropbearkey -t rsa -f etc/id_rsa
 	# bin/dropbearkey -f etc/id_rsa -y > etc/id_rsa.pub
 
 * Populate the `authorized_keys` file
+
+::
 
 	# cat > etc/authorized_keys
 	<paste here the authorized id_{rsa,dsa}.pub keys>
@@ -122,6 +138,8 @@ Prepare your device for dropbear
 	# bin/dropbear -A -N shell -U 1000 -G 1000 -R etc/authorized_keys -F
 
 * In order to be able to use `scp`, it must be seen on `$PATH`
+
+::
 
 	# mount -o remount,rw /system
 	# ln -s /data/dropbear/bin/dropbearmulti /system/xbin/scp

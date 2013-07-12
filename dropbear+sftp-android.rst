@@ -166,6 +166,7 @@ Prepare your device for dropbear
 
 	# mount -o remount,rw /system
 	# ln -s /data/dropbear/bin/dropbearmulti /system/xbin/scp
+	# mount -o remount,ro /system
 
 Run ``dropbear`` as a daemon
 --------------------------

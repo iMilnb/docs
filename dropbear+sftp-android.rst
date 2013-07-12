@@ -15,9 +15,13 @@ Pre-requisites
 
 * Assuming you're using Debian (wheezy) GNU/Linux, install the following package
 
-  # apt-get install emdebian-archive-keyring
+::
+
+	# apt-get install emdebian-archive-keyring
 
 * Then add this repository to `/etc/apt/sources.list.d/emdebian.sources.list`
+
+::
 
 	# deb http://www.emdebian.org/debian squeeze main
 
@@ -40,6 +44,8 @@ Build dropbear
 
 * Fetch and uncompress [dropbear](https://matt.ucc.asn.au/dropbear/)
 
+::
+
 	$ wget -O- -q https://matt.ucc.asn.au/dropbear/dropbear-2013.58.tar.bz2|tar jxvf -
 
 * Apply the [following](patches/dropbear-2013-58-android.patch) patch
@@ -51,15 +57,21 @@ Build dropbear
 
 * Fire up the `configure` script with the following options
 
+::
+
 	$ ./configure --host=arm-linux-gnueabi --disable-zlib --disable-largefile --disable-loginfunc --disable-shadow --disable-utmp --disable-utmpx --disable-wtmp --disable-wtmpx --disable-pututline --disable-pututxline --disable-lastlog --disable-syslog CC=/usr/bin/arm-linux-gnueabi-gcc
 
 * Tune up the `options.h` file according to your needs or [fetch mine]()
 
 * Build dropbear with those variables set
 
+::
+
 	STATIC=1 MULTI=1 CC=arm-linux-gnueabi-gcc SCPPROGRESS=0 PROGRAMS="dropbear dropbearkey scp dbclient" make strip
 
 * Push the `dropbearmulti` binary to a writable directory of your `android` device
+
+::
 
 	$ adb push dropbearmulti /sdcard/tmp
 
@@ -67,6 +79,8 @@ Build sftp-server
 -----------------
 
 * Fetch and uncompress `OpenSSH` (2013/07 latest version is 6.2p2)
+
+::
 
 	$ wget -O- -q http://ftp2.fr.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-6.2p2.tar.gz|tar zxvf -
 
@@ -80,13 +94,19 @@ Build sftp-server
 * Fire up the `configure` script, note that we disable everything we can and ask
 for a statically linked binary thanks to `--with-ldflags=-static`.
 
+::
+
 	./configure --host=arm-linux-gnueabi  --without-shadow --disable-largefile --disable-etc-default-login --disable-lastlog --disable-utmp --disable-utmpx --disable-wtmp --disable-wtmpx --disable-libutil --disable-pututline --disable-pututxline CC=/usr/bin/arm-linux-gnueabi-gcc --with-ldflags=-static
 
 * Build `sftp-server` the classic way:
 
+::
+
 	make sftp-server
 
 And finally send it to your Android device via `adb`:
+
+::
 
 	adb push sftp-server /sdcard/tmp
 
@@ -103,6 +123,8 @@ Prepare your device for dropbear
 	# cd /data/dropbear
 
 * Copy previously pushed binaries to `dropbear`'s `bin` directory
+
+::
 
 	# cp /sdcard/tmp/{dropbearmulti,sftp-server} bin/
 
@@ -135,6 +157,8 @@ Prepare your device for dropbear
 
 * Try `dropbear` by launching it as a foreground process
 
+::
+
 	# bin/dropbear -A -N shell -U 1000 -G 1000 -R etc/authorized_keys -F
 
 * In order to be able to use `scp`, it must be seen on `$PATH`
@@ -148,6 +172,10 @@ Run `dropbear` as a daemon
 --------------------------
 
 * Once everything works as expected, simply start `dropbear` without the `-F` flag and with full path to `authorized_keys`
+
+::
+
+	# bin/dropbear -A -N shell -U 1000 -G 1000 -R /data/dropbear/authorized_keys
 
 * From now on, you will be able to access your device through `SSH`, but also through `SFTP`, thus making is "mountable" using [sshfs](http://fuse.sourceforge.net/sshfs.html).
 

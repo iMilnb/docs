@@ -1,5 +1,4 @@
-Build and run dropbear with sftp support for Android
-====================================================
+## Build and run dropbear with sftp support for Android
 
 So now that there's no clean way of mounting your new Jelly Bean Android device as a mass-storage device, you're trying to find a simple way of sharing files from/to your Android device. The [SSHFS][1] filesystem is a convenient way of accessing a `SSH` filesystem, but obviously it has some pre-requisites on the target device:
 
@@ -8,12 +7,11 @@ So now that there's no clean way of mounting your new Jelly Bean Android device 
 
 There are some `SSH` servers available on the Android market, or better said "SSH server GUIs". They are all based on `dropbear` 0.52, which is pretty old, and  they actually provide binaries which we really can't say where and how they were built. Also, none of those provide an out-of-the-box working `sftp-server`, which is mandatory to use [SSHFS][1].
 
-This document aims at explaining how to build your own `dropbear` and `sftp-servers` binaries, and how to use them.
+This document aims at explaining how to build your own `dropbear` and `sftp-server` binaries, and how to use them.
 
 ![SSH access to a SG4](https://raw.github.com/iMilnb/docs/master/images/dropsftp.png)
 
-Cross-compiling pre-requisites
-------------------------------
+### Cross-compiling pre-requisites
 
 * Assuming you're using Debian (wheezy) GNU/Linux, install the following package
 
@@ -41,8 +39,7 @@ Cross-compiling pre-requisites
 # xapt -a armel -m libssl-dev
 ```
 
-Build dropbear
---------------
+### Build dropbear
 
 * Fetch and uncompress [dropbear][2]
 
@@ -77,8 +74,7 @@ $ STATIC=1 MULTI=1 CC=arm-linux-gnueabi-gcc SCPPROGRESS=0 PROGRAMS="dropbear dro
 $ adb push dropbearmulti /sdcard/tmp
 ```
 
-Build sftp-server
------------------
+### Build sftp-server
 
 * Fetch and uncompress `OpenSSH` (2013/07 latest version is 6.2p2)
 
@@ -111,8 +107,7 @@ And finally send it to your Android device via `adb`:
 $ adb push sftp-server /sdcard/tmp
 ```
 
-Prepare your device for dropbear
---------------------------------
+### Prepare your device for dropbear
 
 * Create needed directories
 
@@ -170,8 +165,7 @@ $ su
 # mount -o remount,ro /system
 ```
 
-Run `dropbear` as a daemon
---------------------------
+### Run `dropbear` as a daemon
 
 * Once everything works as expected, simply start `dropbear` without the `-F` flag and with full path to `authorized_keys`
 
@@ -181,8 +175,7 @@ Run `dropbear` as a daemon
 
 * From now on, you will be able to access your device through `SSH`, but also through `SFTP`, thus making is "mountable" using [SSHFS][1].
 
-Useful URLs
------------
+### Useful URLs
 
 * http://wiki.debian.org/EmdebianToolchain
 * http://wiki.cyanogenmod.org/w/Doc:_dropbear

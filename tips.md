@@ -43,6 +43,10 @@ This work, for obvious reasons, will remain unfinished, more quick tips may or m
 * [iptables](tips/iptables.md)
 * [Install GRUB into USB drive](tips/grub_usb.md)
 
+### Templates
+
+* [Flask](tips/flask.md)
+
 ### OSX
 
 (yes, my wife uses *OSX* and I have to make things work sometimes...)

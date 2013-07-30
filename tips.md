@@ -31,6 +31,7 @@ This work, for obvious reasons, will remain unfinished, more quick tips may or m
 * [OpenSSL IMAP / POP3](tips/openssl_imap_pop3.md)
 * [gettext](tips/gettext.md)
 * [generate htpasswd](tips/generate_htpasswd.md)
+* [Delete line number with sed](tips/sed_del_line_no.md)
 
 ### NetBSD
 

@@ -46,6 +46,7 @@ This work, for obvious reasons, will remain unfinished, more quick tips may or m
 ### Templates
 
 * [Flask](tips/flask.md)
+* [Easy python HTTP request](tips/py-requests.md)
 
 ### OSX
 

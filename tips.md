@@ -37,6 +37,7 @@ This work, for obvious reasons, will remain unfinished, more quick tips may or m
 
 * [sendmail.mc](tips/sendmail_mc.md)
 * [binary upgrade](tips/binary_upgrade.md)
+* [System upgrade with sysupgrade](tips/sysupgrade.md)
 
 ### Linux
 

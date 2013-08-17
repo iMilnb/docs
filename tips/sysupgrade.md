@@ -2,7 +2,7 @@
 
 For my [NetBSD](http://www.NetBSD.org) servers, I don't rely on [sysupgrade](http://blog.netbsd.org/tnf/entry/introducing_sysbuild_and_sysupgrade) to upgrade the kernel, mainly because you may end up with incompatibles userland / kernel at some point, and as those machines are "away", I don't want to take any risk.
 
-This is why I won't recommend the `auto` keyword for a server (I use it on my *NetBSD* workstations). Instead, I first upgrade the kernel, which is backward compatible, then use *sysupgrade(8)* to update the userland.
+This is why I won't recommend the use of *sysupgrade(8)*'s `auto` keyword for a server (I use it on my *NetBSD* workstations). Instead, I first upgrade the kernel, which is backward compatible, then use *sysupgrade(8)* to update the userland.
 
 Also, in most cases, as I build my own *NetBSD* kernels for those servers in order to enable IPsec and some additional features, there's no real need for *sysupgrade(8)* in that area.
 

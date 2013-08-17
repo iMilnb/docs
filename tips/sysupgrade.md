@@ -54,10 +54,10 @@ $ ftp ftp://ftp.fr.netbsd.org/pub/NetBSD/NetBSD-6.1/amd64/binary/kernel/netbsd-G
 # sysupgrade clean
 ```
 
-## Reboot in order to re-run updated `/etc/rc.d` scripts
+### Reboot in order to re-run updated `/etc/rc.d` scripts
 
 ```
 # shutdown -r now
 ```
 
-## Profit!
+### Profit!

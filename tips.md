@@ -24,6 +24,7 @@ This work, for obvious reasons, will remain unfinished, more quick tips may or m
 * [apache htaccess](tips/apache_htaccess.md)
 * [charset galore](tips/charset_galore.md)
 * [Asterisk behind NAT](http://www.freephonie.org/doku/tutoriel:asterisk) - I [initially wrote](http://www.freephonie.org/doku/tutoriel:asterisk?do=revisions) that one
+* [urxvt resources](tips/urxvt_resources.md)
 
 ### UNIX
 

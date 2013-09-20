@@ -19,7 +19,7 @@ This work, for obvious reasons, will remain unfinished, more quick tips may or m
 * [apt-key](tips/apt-key.md)
 * [ssh proxy](tips/ssh_proxy.md)
 * [mencoder to convert ts to avi](tips/mencoder_convert_ts_to_avi.md)
-* [ffmpeg to convert mp4 to flv](tips/ffmpeg_convert_mp4_to_flv.md)
+* [ffmpeg to convert mp4 to webm](tips/ffmpeg_convert_mp4_to_webm.md)
 * [record BBC Radio1](tips/record_bbc_radio1.md)
 * [apache htaccess](tips/apache_htaccess.md)
 * [charset galore](tips/charset_galore.md)

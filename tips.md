@@ -59,3 +59,4 @@ This work, for obvious reasons, will remain unfinished, more quick tips may or m
 * [Enable Time Machine over NFS](tips/time_machine_nfs.md)
 * [Launch item at login window](tips/launch_item_at_login.md)
 * [Launch script at startup](tips/launch_script_at_startup.md)
+* [App to run at XQuartz start](tips/XQuartz_app_to_run.md)
